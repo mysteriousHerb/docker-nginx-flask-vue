@@ -4,9 +4,9 @@ FROM node:lts-alpine
 RUN npm install -g @vue/cli
 
 # copy project files and folders to the current working directory (i.e. 'app' folder)
-COPY . /frontend
+ADD . /frontend
 
-# 8080 for our vue app, 8000 for the vue ui
-EXPOSE 8080, 8000
+# test the vue ui
+
 
 CMD [ "vue", "ui" ]
