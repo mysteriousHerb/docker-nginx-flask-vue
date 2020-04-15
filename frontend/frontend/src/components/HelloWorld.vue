@@ -1,13 +1,11 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
     <button v-on:click="test_get">Fetch info from our backend</button>
-    <br>
-    <input v-model="user_name" placeholder="user_name">
-      <br>
+    <br />
+    <input v-model="user_name" placeholder="user_name" />
+    <br />
     <button v-on:click="test_post">Send your name to backend</button>
     <div>{{backend_response}}</div>
-
   </div>
 </template>
 
@@ -18,15 +16,13 @@ export default {
   name: "HelloWorld",
   data() {
     return {
-      user_name:  '',
-      backend_response: '',
+      user_name: "",
+      backend_response: ""
     };
   },
   props: {
-    msg: String
   },
-  mounted() {
-  },
+  mounted() {},
   methods: {
     test_get: function() {
       var baseURI = "/api/test_get";
@@ -52,7 +48,7 @@ export default {
         })
         .then(response => {
           console.log(response.data);
-          vm.backend_response = response.data
+          vm.backend_response = response.data;
         })
         .catch(function(error) {
           console.log(error);

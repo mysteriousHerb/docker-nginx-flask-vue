@@ -7,7 +7,10 @@ WORKDIR /backend
 # copy current directory to the working directory 
 ADD . /backend
 
-# Install the python dependencies
+# run the following command on host, if there is any libray changes
+# pipenv run pip freeze > requirements.txt
+
+# Install the python dependencies on container
 RUN pip install -r requirements.txt
 
 EXPOSE 8000
